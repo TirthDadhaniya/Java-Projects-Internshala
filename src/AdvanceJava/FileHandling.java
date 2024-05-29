@@ -21,7 +21,7 @@ public class FileHandling {
 
             // WRITE FILE
             FileWriter myWriter = new FileWriter ("testfile.txt");
-            myWriter.write("This is a test file");
+            myWriter.write("This is a test file. \nThis is new line\n");
             myWriter.close();
             System.out.println("File written");
 
@@ -32,6 +32,28 @@ public class FileHandling {
                 System.out.println(data);
             }
             myReader.close();
+
+            // DELETE FILE
+            File Obj = new File("deletefiletest.txt");
+            if (myFile.createNewFile()){
+                System.out.println("File created");
+            }
+            else
+                System.out.println("File already exists");
+
+            FileWriter myWriter1 = new FileWriter ("deletefiletest.txt");
+            myWriter1.write("This is a test file to check DELETE operation. \nThis is new line\n");
+            myWriter1.close();
+            System.out.println("File written");
+
+            if (Obj.delete()) {
+                System.out.println("The deleted file is : "
+                        + Obj.getName());
+            }
+            else {
+                System.out.println(
+                        "Failed in deleting the file.");
+            }
 
             // FILE OPERATION
             System.out.println("File name: " + myFile.getName());

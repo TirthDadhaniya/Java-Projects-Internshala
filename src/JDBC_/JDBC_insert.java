@@ -56,6 +56,7 @@ public class JDBC_insert {
                     System.out.println("Record updated");
                     break;
                 }
+
             }
         } catch (SQLException | ClassNotFoundException | IOException e) {
             System.out.println("Error occurred: "+e);

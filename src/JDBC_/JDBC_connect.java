@@ -18,9 +18,11 @@ public class JDBC_connect {
 
             // Get a connection
             Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to database");
 
             // Create a statement
             Statement statement = connection.createStatement();
+            System.out.println("Statement created");
 
             //create table
             statement.executeUpdate("create table employee (No int, Name varchar(30), Salary int)");
